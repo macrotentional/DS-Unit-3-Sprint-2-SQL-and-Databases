@@ -18,7 +18,7 @@ print("CURSOR", cursor)
 
 # Queries
 ### How many total characters are there?
-query = SELECT * FROM  "charactercreator_character_inventory" ORDER BY "character_id" DESC
+query = SELECT count() FROM "charactercreator_character"
 result = len(cursor.execute(query).fetchall())
 print("total characters:", result) # Based on character_id, there are 302 total characters.
 
@@ -98,12 +98,3 @@ print("Items per character:", result12)
 # GROUP BY charactercreator_character_inventory.character_id)
 # result13 = cursor.execute(query13).fetchall()
 # print("Weapons per character:", result13)
-
-
-
-
-#result = cursor.execute(query)
-#print("RESULT", result) #> returns cursor object w/o results (need to fetch the results)
-
-result3 = (cursor.execute(query).fetchone()
-print("RESULT 2", type(result3), result3)
